@@ -24,6 +24,12 @@
 			</li>
 			{% endif %}
 			{% endfor %}
+
+			{% for category in site.categories %}
+			{% capture category_name %}{{category | first }}{% endcapture %}
+		   <li><a href="{{'/index.html'| prepend: category_name | prepend: '/'}}">{{category_name}}</a></li> 
+			{% endfor %}
+		
 			<!-- Social icons from Font Awesome, if enabled  -->
 			{% include icons.html %}
             
